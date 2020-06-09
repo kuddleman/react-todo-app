@@ -1,10 +1,12 @@
 import React from 'react'
+//import { Row, Col } from 'reactstrap'
 
 const SingleTodo = ( props ) => {
 
   return (
     <>
-     <p>Heelo from SingleTodo</p>
+     <p>Hello from SingleTodo</p>
+     
     </>
   )
 }

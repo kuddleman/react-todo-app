@@ -1,18 +1,36 @@
 import React from 'react';
+
 import Header from './components/shared/Header/Header.jsx'
-import './App.css';
 import TodoManager from './components/shared/TodoManager/TodoManager.jsx';
 import Footer from './components/shared/Footer/Footer'
+
+import { Container, Row, Col } from 'reactstrap'
+import './App.css';
 
 
 function App() {
   return (
-    <div className="container">
-      <p>Hello from APP</p>
-      <Header />
-      <TodoManager />
-      <Footer />
-    </div>
+    <Container>
+
+      <Row>
+        <Col>
+          <Header />
+        </Col>
+      </Row>
+
+      <Row>
+        <Col>
+         <TodoManager />
+        </Col>
+      </Row>
+
+      <Row>
+        <Col>
+          <Footer />
+        </Col>
+      </Row>   
+
+    </Container>
   );
 }
 
