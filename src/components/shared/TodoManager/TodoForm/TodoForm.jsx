@@ -1,17 +1,40 @@
-import React from 'react'
-import { Button, Form, FormGroup, Label, Input } from 'reactstrap'
+import React, { Component } from 'react'
+import { Form, FormGroup, Label, Input } from 'reactstrap'
 
-const TodoForm = ( props ) => {
+class TodoForm extends Component {
+   constructor() {
+     super()
+     this.state = {
+       newTodo: '',
+     }
+   }
 
-  return (
-    <Form>
-      <FormGroup>
-        <Label htmlFor="todo">New Todo Task:</Label>
-        <Input id="todo" type="input" rows="5" />
-      </FormGroup>
-      <Button color="success">Submit</Button>
-    </Form>
-  )
+   changeHandler = ( event ) => {
+     this.setState({ newTodo: event.target.value })
+   }
+
+   submitHandler = ( event ) => {
+     event.preventDefault();
+     alert(`Hey, your new TodoItem is this: ${ this.state.newTodo }`)
+     
+   }
+
+
+  render() {
+    return (
+      <Form onSubmit={ this.submitHandler }>
+        <FormGroup>
+          <Label htmlFor="todo">New Todo Task:</Label>
+          <Input id="todo" 
+                 type="input" 
+                 rows="5" 
+                 onChange={ this.changeHandler }
+          />
+        </FormGroup>
+        <input type="submit" />
+      </Form>
+    )
+  }
 }
 
 export default TodoForm
